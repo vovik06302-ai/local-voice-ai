@@ -1,0 +1,6 @@
+{
+  "name": "Голосовой ИИ",
+  "description": "Персональный локальный голосовой ИИ для Android на русском языке",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
