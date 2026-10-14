@@ -32,9 +32,9 @@ class ExampleRobolectricTest {
   }
 
   @Test
-  fun `verify BuildConfig bumped version name and code for release 1_1_0`() {
-    assertEquals("1.1.0", BuildConfig.VERSION_NAME)
-    assertEquals(2, BuildConfig.VERSION_CODE)
+  fun `verify BuildConfig bumped version name and code for release 1_2_0`() {
+    assertEquals("1.2.0", BuildConfig.VERSION_NAME)
+    assertEquals(3, BuildConfig.VERSION_CODE)
     assertEquals("com.aistudio.voiceai.localai", BuildConfig.APPLICATION_ID)
   }
 

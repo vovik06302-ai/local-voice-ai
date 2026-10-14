@@ -1,0 +1,6 @@
+{
+  "summary": "Обновленный план адаптации проекта «Голосовой ИИ» с учетом всех уточнений:\n1. Подключение llama.cpp строго как Git submodule на теге b3925 c точными командами инициализации и обновлением workflow release.yml (submodules: recursive).\n2. Четкая архитектура размещения модели Vosk (assets/models/vosk-model-small-ru-0.22 -> context.filesDir/vosk/model через StorageService.unpack, а также поддержка импорта из памяти телефона) с проверкой структуры (am/final.mdl, conf/model.conf, graph/HCLG.fst).\n3. Исчерпывающая отдельная проверка совместимости C API llama-jni.cpp с тегом b3925: сигнатуры llama_batch_get_one, llama_load_model_from_file, llama_sampler chain, llama_token_to_piece, llama_chat_apply_template и arm64-v8a SIMD флаги.\n4. Полная офлайн-изоляция без Firebase, исправление GitHub репозитория на vovik06302-ai/local-voice-ai, SAF-импорт GGUF и защита памяти на Helio G99.",
+  "updatedAt": "2026-10-14T04:37:35.888774408Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

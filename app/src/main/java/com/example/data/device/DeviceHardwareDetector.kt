@@ -60,6 +60,17 @@ object DeviceHardwareDetector {
         val device = Build.DEVICE
         val board = Build.BOARD
 
+        val totalRam = if (memInfo.totalMem > 0L) {
+            memInfo.totalMem
+        } else {
+            Runtime.getRuntime().maxMemory().coerceAtLeast(1024L * 1024L * 1024L)
+        }
+        val availRam = if (memInfo.availMem > 0L) {
+            memInfo.availMem
+        } else {
+            Runtime.getRuntime().freeMemory().coerceAtLeast(512L * 1024L * 1024L)
+        }
+
         return DeviceSpecs(
             manufacturer = manufacturer,
             model = model,
@@ -67,8 +78,8 @@ object DeviceHardwareDetector {
             hardwareBoard = board,
             cpuAbi = cpuAbi,
             cpuCores = cpuCores,
-            totalRamBytes = memInfo.totalMem,
-            availRamBytes = memInfo.availMem,
+            totalRamBytes = totalRam,
+            availRamBytes = availRam,
             isLowRam = memInfo.lowMemory,
             totalStorageBytes = totalStorage,
             freeStorageBytes = freeStorage
